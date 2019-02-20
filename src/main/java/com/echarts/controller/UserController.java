@@ -1,6 +1,8 @@
 package com.echarts.controller;
 
 import com.echarts.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,6 +20,7 @@ public class UserController {
     @Resource
     private UserService userService;
 
+    private static final Logger logger  = LoggerFactory.getLogger(UserController.class);
 
     /**
      * 本地访问内容地址 ：http://localhost:8080/lmycc/hello
@@ -34,7 +37,9 @@ public class UserController {
     @RequestMapping("/getUserCount")
     @ResponseBody
     public HashMap<String,Object> getUserCount(){
-        return userService.getUserCount();
+        HashMap<String,Object> map = userService.getUserCount();
+        logger.info("数量"+map);
+        return map;
     }
 
     @RequestMapping("/showUser")
