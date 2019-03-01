@@ -1,5 +1,6 @@
 package com.echarts.controller;
 
+import com.echarts.model.Order;
 import com.echarts.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,5 +47,12 @@ public class UserController {
     @ResponseBody
     public List<HashMap<String,Object>> selectAllUsers(){
         return userService.selectAllUser();
+    }
+
+
+    @RequestMapping("/getorderById")
+    @ResponseBody
+    public Order selectOrderResultMap(){
+       return userService.selectOrderResultMap(2);
     }
 }
