@@ -16,4 +16,6 @@ public interface UserService {
 
     public Order selectOrderResultMap(int id);
 
+    public List<Order> queryAll();
+
 }

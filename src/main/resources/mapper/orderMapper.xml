@@ -10,6 +10,12 @@
     <select id="selectOrderResultMap" parameterType="int" resultMap="orderResultMap">
         select * from orders where order_id=#{id}
     </select>
+
+    <select id="queryAll" resultMap="orderResultMap">
+        select * from  orders where 1=1
+
+    </select>
+
     <!--通过<resultMap>映射实体类属性名和表的字段名对应关系 -->
     <resultMap type="com.echarts.model.Order" id="orderResultMap">
         <!-- 用id属性来映射主键字段 -->

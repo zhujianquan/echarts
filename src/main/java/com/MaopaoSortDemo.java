@@ -2,7 +2,8 @@ package com;
 
 public class MaopaoSortDemo {
     public static void main(String[] args) {
-        sort();
+//        sort();
+        test1();
     }
 
     public static void sort() {
@@ -37,4 +38,35 @@ public class MaopaoSortDemo {
 //        System.out.println(count);
 
     }
+
+    public static  void test1(){
+        String a = "abc";
+        String b = new String("abc");
+        String c = "a"+"bc";
+        System.out.println(a==b);
+        System.out.println(a==c);
+        System.out.println(c==b);
+
+        System.out.println("------------------------");
+        System.out.println(a.equals(b));
+        System.out.println(a.equals(c));
+        System.out.println(c.equals(b));
+    }
+
+    public static  int  test1(int i){
+//        String a = "abc";
+
+//        String b = new String("abc");
+//        String c = "a"+"bc";
+//        System.out.println(a==b);
+//        System.out.println(a==c);
+//        System.out.println(c==b);
+//
+//        System.out.println("------------------------");
+//        System.out.println(a.equals(b));
+//        System.out.println(a.equals(c));
+//        System.out.println(c.equals(b));
+        return 1;
+    }
+
 }

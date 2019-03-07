@@ -1,10 +1,12 @@
 package com.echarts.dao;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.HashMap;
 import java.util.List;
 
+@Mapper
 public interface UserDao {
 
    public  List<HashMap<String,Object>> selectAllUser();
