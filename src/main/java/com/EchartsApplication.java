@@ -7,6 +7,8 @@ import org.springframework.cache.annotation.EnableCaching;
 
 
 @SpringBootApplication
+//@MapperScan("com.echarts.dao")
+@EnableTransactionManagement
 @MapperScan("com.echarts.dao")
 @EnableCaching
 public class EchartsApplication {

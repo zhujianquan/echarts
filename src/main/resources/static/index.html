@@ -17,90 +17,93 @@
     function initEcharts(){
         $.ajax({
             type : 'post',
-            url : "/user/getUserCount",
+            url : "http://112.65.158.140:8085/tunnel?tunnelNum=11111&tunnelType=进口",
+            // url : "/user/queryAll",
 //            data : "dingXiangZuanId=" + dingXiangZuanId + "&ID=getHanJieJinDuZongLan",
             cache : false,
             dataType : 'json',
             success : function(data) {
-                var myChart = echarts.init(document
-                    .getElementById('echats'),'dark');
-                var option = {
-                    // tooltip : {
-                    //     formatter: "{a} <br/>{b} : {c}%"
-                    // },
-                    toolbox: {
-                        feature: {
-                            restore: {},
-                            saveAsImage: {}
-                        }
-                    },
-                    series: [
-                        {
-                            max:'40',
-                            name: '业务指标',
-                            type: 'gauge',
-
-                            detail: {formatter:'焊接量:{value}',
-                                textShadowBlur: 3,
-                                //show:false,
-                                textShadowColor: '#fff',
-                                fontFamily: 'Arial',
-                                fontSize:11,
-                                width: 20,
-                                color: '#eee',
-                            },
-                            data: [{value: 0}],
-                            axisLine: {            // 坐标轴线
-                                lineStyle: {       // 属性lineStyle控制线条样式
-                                    color:[[0.2, new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
-                                        offset: 0.5,
-                                        color: "#36e726" // 50% 处的颜色
-                                    }, {
-                                        offset: 0.8,
-                                        color: "#D9452C" // 40% 处的颜色
-                                    }], false)],
-                                        [0.8, '#63869e'],
-
-                                        [1, '#91c7ae']],
-
-
-                                    width: 8,
-                                    shadowColor : '#fff', //默认透明
-                                    shadowBlur: 10
-                                }
-                            },
-                            axisLabel: {            // 坐标轴小标记
-                                textStyle: {       // 属性lineStyle控制线条样式
-                                    fontWeight: 'bolder',
-                                    color: '#fff',
-                                    shadowColor : '#fff', //默认透明
-                                    shadowBlur: 10
-                                }
-                            },
-                            axisTick: {            // 坐标轴小标记
-                                length :5,        // 属性length控制线长
-                                lineStyle: {       // 属性lineStyle控制线条样式
-                                    // color: 'auto',
-                                    shadowColor : '#fff', //默认透明
-                                    shadowBlur: 10
-                                }
-                            },
-                            splitLine: {           // 分隔线
-                                length :8,         // 属性length控制线长
-                                lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
-                                    width:1,
-                                    color: '#fff',
-                                    shadowColor : '#fff', //默认透明
-                                    shadowBlur: 10
-                                }
-                            },
-                        }
-                    ]
-                };
-                option.series[0].data[0].value=data.count;
-                myChart.setOption(option, true);
-
-            }
+                debugger;
+                alert(data);
+            //     var myChart = echarts.init(document
+            //         .getElementById('echats'),'dark');
+            //     var option = {
+            //         // tooltip : {
+            //         //     formatter: "{a} <br/>{b} : {c}%"
+            //         // },
+            //         toolbox: {
+            //             feature: {
+            //                 restore: {},
+            //                 saveAsImage: {}
+            //             }
+            //         },
+            //         series: [
+            //             {
+            //                 max:'40',
+            //                 name: '业务指标',
+            //                 type: 'gauge',
+            //
+            //                 detail: {formatter:'焊接量:{value}',
+            //                     textShadowBlur: 3,
+            //                     //show:false,
+            //                     textShadowColor: '#fff',
+            //                     fontFamily: 'Arial',
+            //                     fontSize:11,
+            //                     width: 20,
+            //                     color: '#eee',
+            //                 },
+            //                 data: [{value: 0}],
+            //                 axisLine: {            // 坐标轴线
+            //                     lineStyle: {       // 属性lineStyle控制线条样式
+            //                         color:[[0.2, new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+            //                             offset: 0.5,
+            //                             color: "#36e726" // 50% 处的颜色
+            //                         }, {
+            //                             offset: 0.8,
+            //                             color: "#D9452C" // 40% 处的颜色
+            //                         }], false)],
+            //                             [0.8, '#63869e'],
+            //
+            //                             [1, '#91c7ae']],
+            //
+            //
+            //                         width: 8,
+            //                         shadowColor : '#fff', //默认透明
+            //                         shadowBlur: 10
+            //                     }
+            //                 },
+            //                 axisLabel: {            // 坐标轴小标记
+            //                     textStyle: {       // 属性lineStyle控制线条样式
+            //                         fontWeight: 'bolder',
+            //                         color: '#fff',
+            //                         shadowColor : '#fff', //默认透明
+            //                         shadowBlur: 10
+            //                     }
+            //                 },
+            //                 axisTick: {            // 坐标轴小标记
+            //                     length :5,        // 属性length控制线长
+            //                     lineStyle: {       // 属性lineStyle控制线条样式
+            //                         // color: 'auto',
+            //                         shadowColor : '#fff', //默认透明
+            //                         shadowBlur: 10
+            //                     }
+            //                 },
+            //                 splitLine: {           // 分隔线
+            //                     length :8,         // 属性length控制线长
+            //                     lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
+            //                         width:1,
+            //                         color: '#fff',
+            //                         shadowColor : '#fff', //默认透明
+            //                         shadowBlur: 10
+            //                     }
+            //                 },
+            //             }
+            //         ]
+            //     };
+            //     option.series[0].data[0].value=data.count;
+            //     myChart.setOption(option, true);
+            //
+             }
         });
     }
 </script>
