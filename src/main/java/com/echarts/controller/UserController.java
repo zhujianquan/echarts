@@ -1,10 +1,11 @@
 package com.echarts.controller;
 
 import com.echarts.service.UserService;
+import com.jedis.RedisConfig;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -18,6 +19,8 @@ public class UserController {
     @Resource
     private UserService userService;
 
+    @Autowired
+    private RedisConfig redisConfig ;
 
     /**
      * 本地访问内容地址 ：http://localhost:8080/lmycc/hello
@@ -40,5 +43,14 @@ public class UserController {
     @ResponseBody
     public List<HashMap<String,Object>> selectAllUsers(){
         return userService.selectAllUser();
+    }
+
+    @RequestMapping("/demoTest")
+    @ResponseBody
+    public  HashMap<String,Object> demoTest(){
+        redisConfig.set("name","zhangsan");
+        HashMap<String,Object> hashMap = new HashMap<>();
+        hashMap.put("name",redisConfig.get("name"));
+        return hashMap;
     }
 }
