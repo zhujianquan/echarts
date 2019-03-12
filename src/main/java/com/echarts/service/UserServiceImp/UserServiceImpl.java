@@ -5,6 +5,7 @@ import com.echarts.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import javax.transaction.Transactional;
 import java.util.HashMap;
 import java.util.List;
 
@@ -20,8 +21,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public HashMap<String, Object> getUserCount() {
+        int count = userDao.getUserCount();
         HashMap<String, Object> map= new HashMap<String, Object>();
-        map.put("count",userDao.getUserCount());
+        map.put("count",count);
          return map;
     }
 }
