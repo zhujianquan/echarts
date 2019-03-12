@@ -7,10 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
 import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import com.echarts.model.User;
 
 
 @Controller
@@ -44,6 +46,20 @@ public class UserController {
     @RequestMapping("/showUser")
     @ResponseBody
     public List<HashMap<String,Object>> selectAllUsers(){
+        try {
+            String className  = "com.echarts.model.User";
+            Class<User> clas =  (Class<User>)Class.forName(className);
+            User user = clas.newInstance();
+            Map<String,String> map = new HashMap<>();
+            map.put("kecheng","语文");
+            user.setName("张三");
+            user.setAge(12);
+            user.setAa(map);
+            System.out.println(user.toString());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return userService.selectAllUser();
     }
 }
