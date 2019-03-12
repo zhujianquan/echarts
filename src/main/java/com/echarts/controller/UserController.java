@@ -49,6 +49,7 @@ public class UserController {
         try {
             String className  = "com.echarts.model.User";
             Class<User> clas =  (Class<User>)Class.forName(className);
+
             User user = clas.newInstance();
             Map<String,String> map = new HashMap<>();
             map.put("kecheng","语文");
