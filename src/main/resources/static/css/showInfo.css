@@ -1,5 +1,10 @@
+html, body {
+    padding: 0;
+    margin: 0; /*background-color:#000328;*/
+    font-family: 微软雅黑;
+}
+
 body {
-    background: rgba(120,190,244,0.8);
-    /*border: ;*/
-    border-bottom-width: 0px;
+    text-align: center;
+    font-family: 微软雅黑;
 }

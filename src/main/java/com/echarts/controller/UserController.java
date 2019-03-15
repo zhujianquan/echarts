@@ -58,6 +58,8 @@ public class UserController {
             user.setAge(12);
             user.setAa(map);
             System.out.println(user.toString());
+            System.out.println(user.toString());
+            System.out.println(user.toString());
 
         } catch (Exception e) {
             e.printStackTrace();
