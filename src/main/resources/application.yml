@@ -24,8 +24,9 @@ logging:
 
 #开发配置
 spring:
+
   resources:
-    static-locations: classpath:/templates/,classpath:/static/
+    static-locations: classpath:/templates/, classpath:/static/
   #热部署生效
   devtools:
     restart:
