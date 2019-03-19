@@ -25,7 +25,7 @@ logging:
 #开发配置
 spring:
   resources:
-    static-locations: classpath:/static/
+    static-locations: classpath:/templates/,classpath:/static/
   #热部署生效
   devtools:
     restart:
@@ -36,7 +36,7 @@ spring:
       #classpath目录下的WEB-INF文件夹内容修改不重启
 #      exclude: src/main/resources/**
   thymeleaf:
-    prefix: classpath:/static/
+    prefix: classpath:/templates/
     suffix: .html
     cache: false
 
